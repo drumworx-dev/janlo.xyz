@@ -627,10 +627,9 @@
 
     .testi-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      align-items: center;
-      padding: 0 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      align-items: start;
     }
 
     .testi-img {
@@ -640,8 +639,16 @@
       border-radius: 10px;
     }
 
+    /* Centre the lone third card */
+    .testi-img:last-child {
+      grid-column: 1 / -1;
+      max-width: calc(50% - 14px);
+      margin: 0 auto;
+    }
+
     @media (max-width: 860px) {
       .testi-grid { grid-template-columns: 1fr; gap: 20px; }
+      .testi-img:last-child { grid-column: auto; max-width: 100%; margin: 0; }
     }
 
     /* ============================================================
@@ -831,7 +838,20 @@
         gap: 32px;
         padding-top: 80px;
       }
+      .hero-photo-wrap { margin-top: 20px; }
       .hero-photo { width: 160px; height: 160px; }
+
+      /* Reorder hero content: move location below CTAs */
+      .hero-content { display: flex; flex-direction: column; }
+      .hero-eyebrow  { order: 1; }
+      .hero-name     { order: 2; }
+      .hero-sub      { order: 3; color: #b2bfcf; }
+      .hero-ctas     { order: 4; }
+      .hero-location { order: 5; margin-top: 20px; margin-bottom: 0; }
+
+      /* Hide scroll indicator — clutters mobile layout */
+      .scroll-hint { display: none; }
+
       .services-grid { grid-template-columns: 1fr; }
       .work-grid     { grid-template-columns: 1fr; }
       .stats-grid {
@@ -850,6 +870,12 @@
       .rec-card {
         min-width: 288px;
         scroll-snap-align: start;
+      }
+      /* Testi strip: stack vertically, full width */
+      .testi-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0;
       }
     }
 
@@ -909,7 +935,7 @@
             Currently in Bali, Indonesia &middot; GMT+8
             <span class="hero-location-base">&nbsp;&middot;&nbsp;Base: Cape Town, SA</span>
           </p>
-          <p class="hero-sub">I build growth systems that scale &mdash; not campaigns. Bitcoin, fintech and digital assets, from zero to millions, across 15+ markets.<br>Strategy and execution: automation, code, data storytelling and deal-closing. 18 years &middot; $10M+ budgets &middot; 2M+ users grown.</p>
+          <p class="hero-sub">I build growth systems that scale &mdash; not campaigns. Bitcoin, fintech and digital assets, from zero to millions, across 15+ markets.<br>Strategy and execution: automation, code, data storytelling and deal-closing.</p>
           <div class="hero-ctas">
             <a href="files/janlo-vdh-cv.pdf" class="btn btn-primary" target="_blank" rel="noopener">
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
