@@ -699,6 +699,45 @@
     }
 
     /* ============================================================
+       WORK MARQUEE
+    ============================================================ */
+    #work-marquee {
+      padding: 48px 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: marquee-scroll 40s linear infinite;
+    }
+
+    #work-marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      display: block;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+
+    .marquee-img:hover {
+      opacity: 1;
+    }
+
+    /* ============================================================
        STATS
     ============================================================ */
     #stats {
@@ -1116,6 +1155,32 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       WORK IMAGE MARQUEE
+  ================================================================ -->
+  <section id="work-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- Original set -->
+      <img src="images/work/w1.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w2.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w3.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w4.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w5.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w6.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w7.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w8.jpg" alt="" class="marquee-img" />
+      <!-- Duplicate set for seamless loop -->
+      <img src="images/work/w1.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w2.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w3.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w4.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w5.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w6.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w7.jpg" alt="" class="marquee-img" />
+      <img src="images/work/w8.jpg" alt="" class="marquee-img" />
     </div>
   </section>
 
