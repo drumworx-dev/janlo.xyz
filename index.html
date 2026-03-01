@@ -627,10 +627,9 @@
 
     .testi-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      align-items: center;
-      padding: 0 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      align-items: start;
     }
 
     .testi-img {
@@ -640,8 +639,16 @@
       border-radius: 10px;
     }
 
+    /* Centre the lone third card */
+    .testi-img:last-child {
+      grid-column: 1 / -1;
+      max-width: calc(50% - 14px);
+      margin: 0 auto;
+    }
+
     @media (max-width: 860px) {
       .testi-grid { grid-template-columns: 1fr; gap: 20px; }
+      .testi-img:last-child { grid-column: auto; max-width: 100%; margin: 0; }
     }
 
     /* ============================================================
