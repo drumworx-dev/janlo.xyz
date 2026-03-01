@@ -13,7 +13,7 @@
   <meta property="og:description" content="Senior growth and marketing operator in Bitcoin and digital assets. 18+ years experience. $10M+ budgets managed." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://janlo.xyz" />
-  <meta property="og:image" content="https://janlo.xyz/og-image.jpg" />
+  <meta property="og:image" content="https://janlo.xyz/images/og-image.jpg" />
 
   <!-- Favicon: geometric monogram J in electric blue -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230A0E1A'/%3E%3Ctext x='16' y='23' font-family='Arial%2Csans-serif' font-weight='700' font-size='21' fill='%232563EB' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E" />
@@ -257,11 +257,40 @@
       pointer-events: none;
     }
 
-    .hero-content {
+    /* Hero two-column layout */
+    .hero-inner {
       position: relative;
       z-index: 2;
       padding-top: 60px;
-      max-width: 760px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 64px;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 0;
+      max-width: 620px;
+    }
+
+    /* Circular headshot */
+    .hero-photo-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .hero-photo {
+      display: block;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(37, 99, 235, 0.5);
+      box-shadow:
+        0 0 0 8px rgba(37, 99, 235, 0.07),
+        0 0 48px rgba(37, 99, 235, 0.28);
     }
 
     .hero-eyebrow {
@@ -720,6 +749,13 @@
     ============================================================ */
     @media (max-width: 860px) {
       section { padding: 80px 0; }
+      .hero-inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 32px;
+        padding-top: 80px;
+      }
+      .hero-photo { width: 160px; height: 160px; }
       .services-grid { grid-template-columns: 1fr; }
       .work-grid     { grid-template-columns: 1fr; }
       .stats-grid {
@@ -787,24 +823,38 @@
     <canvas id="particle-canvas"></canvas>
 
     <div class="container">
-      <div class="hero-content">
-        <p class="hero-eyebrow">janlo.xyz</p>
-        <h1 class="hero-name">Janlo van den Heever</h1>
-        <p class="hero-sub">Head of Growth &middot; Bitcoin &amp; Digital Assets &middot; $10M+ Budgets &middot; 18 Years</p>
-        <div class="hero-ctas">
-          <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 2v8"/><path d="M4.5 7.5L8 11l3.5-3.5"/><path d="M2 14h12"/>
-            </svg>
-            Download CV
-          </a>
-          <a href="#work" class="btn btn-outline">
-            View Work
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 3l5 5-5 5"/>
-            </svg>
-          </a>
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <p class="hero-eyebrow">janlo.xyz</p>
+          <h1 class="hero-name">Janlo van den Heever</h1>
+          <p class="hero-sub">Head of Growth &middot; Bitcoin &amp; Digital Assets &middot; $10M+ Budgets &middot; 18 Years</p>
+          <div class="hero-ctas">
+            <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2v8"/><path d="M4.5 7.5L8 11l3.5-3.5"/><path d="M2 14h12"/>
+              </svg>
+              Download CV
+            </a>
+            <a href="#work" class="btn btn-outline">
+              View Work
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3l5 5-5 5"/>
+              </svg>
+            </a>
+          </div>
         </div>
+
+        <div class="hero-photo-wrap">
+          <img
+            src="images/headshot.jpg"
+            alt="Janlo van den Heever"
+            class="hero-photo"
+            width="400"
+            height="400"
+          />
+        </div>
+
       </div>
     </div>
 
