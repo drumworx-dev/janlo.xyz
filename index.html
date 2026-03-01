@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <!-- Google Tag Manager -->
+  <!-- GTM-KNCZBZ7: Paste your GTM <script> snippet here -->
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janlo van den Heever | Head of Growth · Bitcoin &amp; Digital Assets</title>
+  <meta name="description" content="Senior growth and marketing operator in Bitcoin and digital assets. 18+ years experience. $10M+ budgets managed. Open to Director and Fractional CMO roles." />
+  <meta property="og:title" content="Janlo van den Heever | Head of Growth · Bitcoin &amp; Digital Assets" />
+  <meta property="og:description" content="Senior growth and marketing operator in Bitcoin and digital assets. 18+ years experience. $10M+ budgets managed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://janlo.xyz" />
+  <meta property="og:image" content="https://janlo.xyz/og-image.jpg" />
+
+  <!-- Favicon: geometric monogram J in electric blue -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230A0E1A'/%3E%3Ctext x='16' y='23' font-family='Arial%2Csans-serif' font-weight='700' font-size='21' fill='%232563EB' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       RESET & CUSTOM PROPERTIES
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0A0E1A;
+      --bg-surface:   #0D1220;
+      --bg-card:      #0F1628;
+      --accent:       #2563EB;
+      --accent-dim:   rgba(37, 99, 235, 0.18);
+      --accent-glow:  rgba(37, 99, 235, 0.35);
+      --accent-strong:rgba(37, 99, 235, 0.55);
+      --border:       rgba(37, 99, 235, 0.12);
+      --border-hover: rgba(37, 99, 235, 0.55);
+      --text:         #E8EDF5;
+      --text-dim:     #8A9BBB;
+      --text-muted:   #5A6A88;
+      --font:         'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --nav-h:        68px;
+      --radius:       6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.65;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      padding: 0 28px;
+      background: rgba(10, 14, 26, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(37, 99, 235, 0.07);
+      transition: background 0.3s;
+    }
+    nav.scrolled { background: rgba(10, 14, 26, 0.97); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .nav-logo em { color: var(--accent); font-style: normal; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--text-dim);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 18px;
+      border: 1px solid rgba(37,99,235,0.5);
+      border-radius: var(--radius);
+      color: var(--accent) !important;
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--accent) !important;
+      border-color: var(--accent) !important;
+      color: #fff !important;
+      box-shadow: 0 0 18px var(--accent-glow) !important;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text);
+      padding: 4px;
+    }
+    .nav-toggle svg { display: block; }
+
+    @media (max-width: 860px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0; right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: rgba(9, 13, 24, 0.98);
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        width: 100%;
+        padding: 13px 28px;
+        font-size: 15px;
+      }
+      .nav-cta { margin: 12px 28px; width: calc(100% - 56px); text-align: center; }
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+    .btn svg { flex-shrink: 0; }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 22px var(--accent-glow);
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+      box-shadow: 0 0 36px var(--accent-strong);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 18px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* subtle vignette over canvas */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 70% at 50% 50%, transparent 40%, rgba(10,14,26,0.6) 100%),
+        linear-gradient(to bottom, rgba(10,14,26,0.15) 0%, rgba(10,14,26,0.25) 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 60px;
+      max-width: 760px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 22px;
+    }
+
+    .hero-name {
+      font-size: clamp(40px, 6.5vw, 76px);
+      font-weight: 700;
+      letter-spacing: -2.5px;
+      line-height: 1.0;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+
+    .hero-sub {
+      font-size: clamp(14px, 2vw, 17px);
+      font-weight: 300;
+      color: var(--text-dim);
+      letter-spacing: 0.2px;
+      margin-bottom: 44px;
+      line-height: 1.5;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.3;
+      animation: float 2.2s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+
+    /* ============================================================
+       SECTION SHELL
+    ============================================================ */
+    section { padding: 104px 0; }
+
+    .section-header { margin-bottom: 56px; }
+
+    .section-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+
+    .section-desc {
+      font-size: 15.5px;
+      font-weight: 300;
+      color: var(--text-dim);
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       WHAT I DO
+    ============================================================ */
+    #services {
+      background:
+        linear-gradient(180deg, rgba(37,99,235,0.025) 0%, transparent 80%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px 32px;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .service-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 40px var(--accent-glow), inset 0 0 28px rgba(37,99,235,0.03);
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent-dim);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      color: var(--accent);
+    }
+    .service-icon svg { width: 20px; height: 20px; stroke-width: 2; }
+
+    .service-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       SELECTED WORK
+    ============================================================ */
+    #work {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(37,99,235,0.04) 0%, transparent 70%);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .work-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+
+    /* top edge glow line on hover */
+    .work-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 16px; right: 16px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .work-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 8px 44px rgba(37,99,235,0.14), 0 0 0 1px rgba(37,99,235,0.25);
+      transform: translateY(-5px);
+    }
+    .work-card:hover::before { opacity: 1; }
+
+    .work-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+
+    .work-company {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .work-role {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .badge-new {
+      flex-shrink: 0;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(37,99,235,0.35);
+      border-radius: 3px;
+      padding: 3px 8px;
+      margin-top: 2px;
+    }
+
+    .work-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.4px;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .work-results {
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .work-results li {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--text-dim);
+      padding: 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+    .work-results li::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .work-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--accent);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      margin-top: auto;
+    }
+    .work-link:hover { opacity: 1; }
+    .work-link svg { width: 13px; height: 13px; stroke-width: 2.5; }
+
+    /* ============================================================
+       STATS
+    ============================================================ */
+    #stats {
+      padding: 80px 0;
+      background:
+        linear-gradient(135deg, #0C1120 0%, #0A0E1A 40%, #0D1222 100%);
+      border-top:    1px solid rgba(37, 99, 235, 0.09);
+      border-bottom: 1px solid rgba(37, 99, 235, 0.09);
+    }
+
+    .stats-label {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 20px 12px;
+      position: relative;
+    }
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 18%; bottom: 18%;
+      width: 1px;
+      background: rgba(37, 99, 235, 0.13);
+    }
+
+    .stat-number {
+      font-size: clamp(32px, 4vw, 50px);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0;
+    }
+    .stat-number .pre  { font-size: 0.6em; color: var(--accent); margin-right: 1px; }
+    .stat-number .suf  { font-size: 0.58em; color: var(--accent); margin-left: 1px; }
+    .stat-number .val  { font-variant-numeric: tabular-nums; }
+
+    .stat-label {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
+    }
+
+    /* ============================================================
+       RECOMMENDATIONS
+    ============================================================ */
+    .rec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .rec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rec-quote {
+      font-size: 56px;
+      line-height: 0.9;
+      color: var(--accent);
+      opacity: 0.5;
+      font-family: Georgia, serif;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .rec-text {
+      font-size: 14.5px;
+      font-weight: 300;
+      color: var(--text-dim);
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .rec-name {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .rec-title {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: #07090F;
+      border-top: 1px solid rgba(37, 99, 235, 0.07);
+      padding: 72px 0 44px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 28px;
+    }
+
+    .footer-logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .footer-logo em { color: var(--accent); font-style: normal; }
+
+    .footer-line {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dim);
+      max-width: 460px;
+      line-height: 1.65;
+    }
+
+    .footer-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .social-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 18px var(--accent-glow);
+    }
+    .social-btn svg { width: 17px; height: 17px; }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 860px) {
+      section { padding: 80px 0; }
+      .services-grid { grid-template-columns: 1fr; }
+      .work-grid     { grid-template-columns: 1fr; }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stat-item:nth-child(5) { grid-column: span 2; }
+      .stat-item + .stat-item::before { display: none; }
+      .rec-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px;
+      }
+      .rec-card {
+        min-width: 288px;
+        scroll-snap-align: start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 64px 0; }
+      .container { padding: 0 20px; }
+      .hero-name { letter-spacing: -1.5px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <!-- GTM-KNCZBZ7: Paste your GTM <noscript> snippet here, immediately after the opening <body> tag -->
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ================================================================
+       NAV
+  ================================================================ -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Janlo <em>M.</em></a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">What I Do</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#stats">Numbers</a></li>
+        <li><a href="#recommendations">Recommendations</a></li>
+        <li><a href="mailto:janlovdh.cx@gmail.com" class="nav-cta">Contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6"  x2="19" y2="6"  />
+          <line x1="3" y1="11" x2="19" y2="11" />
+          <line x1="3" y1="16" x2="19" y2="16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       HERO
+  ================================================================ -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">janlo.xyz</p>
+        <h1 class="hero-name">Janlo van den Heever</h1>
+        <p class="hero-sub">Head of Growth &middot; Bitcoin &amp; Digital Assets &middot; $10M+ Budgets &middot; 18 Years</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v8"/><path d="M4.5 7.5L8 11l3.5-3.5"/><path d="M2 14h12"/>
+            </svg>
+            Download CV
+          </a>
+          <a href="#work" class="btn btn-outline">
+            View Work
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 3l5 5-5 5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 3v10"/><path d="M5 9.5l4 4 4-4"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       WHAT I DO
+  ================================================================ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label fade-in">Capabilities</span>
+        <h2 class="section-title fade-in">What I Do</h2>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <!-- Chart / trending up -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="17 7 22 7 22 12"/>
+            </svg>
+          </div>
+          <h3 class="service-title">GTM Strategy &amp; Execution</h3>
+          <p class="service-desc">From zero to launch across B2C, B2B and API products</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <!-- Globe -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Regional Marketing</h3>
+          <p class="service-desc">Multi-market ownership across LATAM and digital assets</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <!-- Zap -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Growth Systems</h3>
+          <p class="service-desc">Funnels, CRM, acquisition and retention at scale</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SELECTED WORK
+  ================================================================ -->
+  <section id="work">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label fade-in">Portfolio</span>
+        <h2 class="section-title fade-in">Selected Work</h2>
+        <p class="section-desc fade-in">Growth programmes across Bitcoin, fintech, edtech and consumer apps.</p>
+      </div>
+
+      <div class="work-grid">
+
+        <!-- 1. Xverse -->
+        <div class="work-card fade-in">
+          <div class="work-card-top">
+            <div>
+              <p class="work-company">Xverse</p>
+              <p class="work-role">Head of Growth</p>
+            </div>
+          </div>
+          <h3 class="work-title">Bitcoin Neobank GTM &amp; Brand Repositioning</h3>
+          <ul class="work-results">
+            <li>Repositioned 2M-user product from crypto wallet to premium Bitcoin neobank</li>
+            <li>Launched API product from zero with full B2B GTM programme</li>
+            <li>Card waitlist: 2,000 signups in 48 hours</li>
+            <li>50% output increase via AI workflow restructure</li>
+          </ul>
+          <a href="https://www.xverse.app" class="work-link" target="_blank" rel="noopener">
+            xverse.app
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- 2. Moms Who Trade (NEW badge, prominent) -->
+        <div class="work-card fade-in">
+          <div class="work-card-top">
+            <div>
+              <p class="work-company">Moms Who Trade</p>
+              <p class="work-role">Co-Founder &amp; Growth Lead</p>
+            </div>
+            <span class="badge-new">New</span>
+          </div>
+          <h3 class="work-title">Trading Education App &amp; Community</h3>
+          <ul class="work-results">
+            <li>Built app and online community platform from zero</li>
+            <li>Targeting digital nomad moms seeking income through trading</li>
+            <li>Full product, brand and GTM ownership</li>
+            <li>Monetisation from workshops through to membership</li>
+          </ul>
+        </div>
+
+        <!-- 3. Crypto Banter -->
+        <div class="work-card fade-in">
+          <div class="work-card-top">
+            <div>
+              <p class="work-company">Crypto Banter</p>
+              <p class="work-role">Head of Marketing</p>
+            </div>
+          </div>
+          <h3 class="work-title">Influencer Marketing &amp; Revenue Growth</h3>
+          <ul class="work-results">
+            <li>Closed deals with Jason Derulo, Scott Melker (The Wolf of All Streets), Eric Krown</li>
+            <li>Launched Krown Trading School as a fully monetised digital product</li>
+            <li>40%+ improvement in top-of-funnel conversion via CRM overhaul</li>
+            <li>Affiliate partnerships with Bybit, TradingView, Coingecko</li>
+          </ul>
+          <a href="https://www.cryptobanter.com" class="work-link" target="_blank" rel="noopener">
+            cryptobanter.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- 4. HyperionDev -->
+        <div class="work-card fade-in">
+          <div class="work-card-top">
+            <div>
+              <p class="work-company">HyperionDev</p>
+              <p class="work-role">Global Head of Marketing</p>
+            </div>
+          </div>
+          <h3 class="work-title">3x Revenue Growth in 12 Months</h3>
+          <ul class="work-results">
+            <li>3x revenue in under 12 months</li>
+            <li>$2M+ annual media budget ownership</li>
+            <li>10,000+ applicants sourced for UK DfE-funded bootcamps</li>
+            <li>Partnerships: Imperial College London, University of Manchester</li>
+          </ul>
+          <a href="https://www.hyperiondev.com" class="work-link" target="_blank" rel="noopener">
+            hyperiondev.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- 5. Timewarp -->
+        <div class="work-card fade-in">
+          <div class="work-card-top">
+            <div>
+              <p class="work-company">Timewarp Delivery</p>
+              <p class="work-role">Founder</p>
+            </div>
+          </div>
+          <h3 class="work-title">On-Demand Delivery App</h3>
+          <ul class="work-results">
+            <li>10,000+ app downloads on iOS &amp; Android</li>
+            <li>100,000+ item product catalogue</li>
+            <li>Payment &amp; stock feed integrations</li>
+          </ul>
+          <a href="https://www.youtube.com/watch?v=70k4mFszo5c" class="work-link" target="_blank" rel="noopener">
+            Watch demo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- 6. Red Bull -->
+        <div class="work-card fade-in">
+          <div class="work-card-top">
+            <div>
+              <p class="work-company">Red Bull</p>
+              <p class="work-role">LATAM Head of Trade Marketing</p>
+            </div>
+          </div>
+          <h3 class="work-title">$10M+ Regional Marketing, Latin America</h3>
+          <ul class="work-results">
+            <li>$10M+ annual budget across B2C, hardware and B2B partners</li>
+            <li>15+ markets across Latin America</li>
+            <li>Price architecture ownership across the region</li>
+            <li>Direct partnership with MDs and country GMs</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       BY THE NUMBERS
+  ================================================================ -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-label">
+        <span class="section-label fade-in" style="display:inline-block;">By the Numbers</span>
+      </div>
+      <div class="stats-grid">
+
+        <div class="stat-item fade-in">
+          <div class="stat-number">
+            <span class="val counter" data-target="18">0</span><span class="suf">+</span>
+          </div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+
+        <div class="stat-item fade-in">
+          <div class="stat-number">
+            <span class="pre">$</span><span class="val counter" data-target="10">0</span><span class="suf">M+</span>
+          </div>
+          <div class="stat-label">Budgets Managed</div>
+        </div>
+
+        <div class="stat-item fade-in">
+          <div class="stat-number">
+            <span class="val counter" data-target="2">0</span><span class="suf">M+</span>
+          </div>
+          <div class="stat-label">App Users Grown</div>
+        </div>
+
+        <div class="stat-item fade-in">
+          <div class="stat-number">
+            <span class="val counter" data-target="15">0</span><span class="suf">+</span>
+          </div>
+          <div class="stat-label">Markets Owned</div>
+        </div>
+
+        <div class="stat-item fade-in">
+          <div class="stat-number">
+            <span class="val counter" data-target="3">0</span><span class="suf">x</span>
+          </div>
+          <div class="stat-label">Revenue Growth</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       RECOMMENDATIONS
+  ================================================================ -->
+  <section id="recommendations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label fade-in">Recommendations</span>
+        <h2 class="section-title fade-in">What They Say</h2>
+      </div>
+
+      <div class="rec-grid">
+
+        <div class="rec-card fade-in">
+          <span class="rec-quote" aria-hidden="true">&ldquo;</span>
+          <p class="rec-text">Janlo is absolutely a beast of a Marketing Director.</p>
+          <p class="rec-name">Ran Neuner</p>
+          <p class="rec-title">CEO &amp; Founder, Crypto Banter</p>
+        </div>
+
+        <div class="rec-card fade-in">
+          <span class="rec-quote" aria-hidden="true">&ldquo;</span>
+          <p class="rec-text">In an extremely short space of time and with a team that was barely formed, Janlo managed to lead the recruitment of thousands of applicants. We set very ambitious targets and these were nearly all met.</p>
+          <p class="rec-name">Riaz Moola</p>
+          <p class="rec-title">Founder &amp; CEO, HyperionDev (Forbes 30 Under 30 / Cambridge Gates Scholar)</p>
+        </div>
+
+        <div class="rec-card fade-in">
+          <span class="rec-quote" aria-hidden="true">&ldquo;</span>
+          <p class="rec-text">A trustworthy, accountable and strategy-oriented professional that left a good legacy in the region.</p>
+          <p class="rec-name">Diego Collicchio</p>
+          <p class="rec-title">President Red Bull Brazil / ex-President Red Bull US</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-logo">Janlo <em>M.</em></div>
+
+        <p class="footer-line">
+          Open to Director and Fractional CMO opportunities in Bitcoin, Digital Assets and Fintech.
+        </p>
+
+        <div class="footer-ctas">
+          <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v8"/><path d="M4.5 7.5L8 11l3.5-3.5"/><path d="M2 14h12"/>
+            </svg>
+            Download CV
+          </a>
+          <a href="mailto:janlovdh.cx@gmail.com" class="btn btn-outline btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+            Email Me
+          </a>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/janlovdh/" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="footer-copy">&copy; Janlo M. van den Heever &middot; janlo.xyz</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       JAVASCRIPT
+  ================================================================ -->
+  <script>
+    /* ---- NAV TOGGLE ---- */
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks  = document.getElementById('nav-links');
+
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+
+    // Close mobile nav when a link is clicked
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    /* ---- NAV SCROLL OPACITY ---- */
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      mainNav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ---- PARTICLE CANVAS ---- */
+    (function () {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx    = canvas.getContext('2d');
+      const ACCENT = '37, 99, 235';
+      const COUNT  = 72;
+      const LINK   = 130;
+      let W, H, pts;
+
+      function resize() {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+
+      function spawn() {
+        pts = Array.from({ length: COUNT }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.38,
+          vy: (Math.random() - 0.5) * 0.38,
+          r:  Math.random() * 1.6 + 0.4,
+        }));
+      }
+
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+
+        for (let i = 0; i < COUNT; i++) {
+          for (let j = i + 1; j < COUNT; j++) {
+            const dx   = pts[i].x - pts[j].x;
+            const dy   = pts[i].y - pts[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < LINK) {
+              ctx.beginPath();
+              ctx.moveTo(pts[i].x, pts[i].y);
+              ctx.lineTo(pts[j].x, pts[j].y);
+              ctx.strokeStyle = `rgba(${ACCENT}, ${(1 - dist / LINK) * 0.28})`;
+              ctx.lineWidth   = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        pts.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${ACCENT}, 0.55)`;
+          ctx.fill();
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+        });
+
+        requestAnimationFrame(tick);
+      }
+
+      resize();
+      spawn();
+      tick();
+      window.addEventListener('resize', () => { resize(); spawn(); });
+    })();
+
+    /* ---- FADE-IN ON SCROLL ---- */
+    (function () {
+      // Stagger children within grid containers
+      document.querySelectorAll('.services-grid, .work-grid, .rec-grid').forEach(grid => {
+        Array.from(grid.children).forEach((el, i) => {
+          if (el.classList.contains('fade-in')) {
+            el.style.transitionDelay = `${i * 90}ms`;
+          }
+        });
+      });
+
+      document.querySelectorAll('.stats-grid .stat-item').forEach((el, i) => {
+        el.style.transitionDelay = `${i * 80}ms`;
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    })();
+
+    /* ---- COUNTER ANIMATION ---- */
+    (function () {
+      let fired = false;
+      const statsSection = document.getElementById('stats');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !fired) {
+            fired = true;
+            document.querySelectorAll('.counter').forEach(counter => {
+              const target   = +counter.dataset.target;
+              const duration = 1600;
+              const steps    = Math.max(target, 20);
+              const interval = duration / steps;
+              let current    = 0;
+
+              const timer = setInterval(() => {
+                current++;
+                counter.textContent = current;
+                if (current >= target) {
+                  counter.textContent = target;
+                  clearInterval(timer);
+                }
+              }, interval);
+            });
+          }
+        });
+      }, { threshold: 0.4 });
+
+      if (statsSection) observer.observe(statsSection);
+    })();
+
+    /* ---- SMOOTH SCROLL FOR ANCHOR LINKS ---- */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
