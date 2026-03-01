@@ -569,14 +569,25 @@
     .work-link svg { width: 13px; height: 13px; stroke-width: 2.5; }
 
     /* Work card brand logo */
+    .work-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .work-logo {
       display: block;
       height: 36px;
-      width: auto;
-      max-width: 160px;
+      width: 36px;
       object-fit: contain;
-      object-position: left center;
-      margin-bottom: 4px;
+      object-position: center;
+      flex-shrink: 0;
+    }
+
+    .work-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
     /* ============================================================
@@ -983,9 +994,12 @@
         <!-- 1. Xverse -->
         <div class="work-card fade-in">
           <div class="work-card-top">
-            <div>
-              <img src="images/logos/xverse.png" alt="Xverse" class="work-logo" width="200" height="200" />
-              <p class="work-role">Head of Growth</p>
+            <div class="work-brand">
+              <img src="images/logos/xverse.png" alt="Xverse" class="work-logo" width="36" height="36" />
+              <div class="work-brand-text">
+                <p class="work-company">Xverse</p>
+                <p class="work-role">Head of Growth</p>
+              </div>
             </div>
           </div>
           <h3 class="work-title">Bitcoin Neobank GTM &amp; Brand Repositioning</h3>
@@ -1008,9 +1022,12 @@
         <!-- 2. Crypto Banter -->
         <div class="work-card fade-in">
           <div class="work-card-top">
-            <div>
-              <img src="images/logos/crypto-banter.png" alt="Crypto Banter" class="work-logo" width="200" height="200" />
-              <p class="work-role">Head of Marketing</p>
+            <div class="work-brand">
+              <img src="images/logos/crypto-banter.png" alt="Crypto Banter" class="work-logo" width="36" height="36" />
+              <div class="work-brand-text">
+                <p class="work-company">Crypto Banter</p>
+                <p class="work-role">Head of Marketing</p>
+              </div>
             </div>
           </div>
           <h3 class="work-title">Crypto School, Influencer Deals &amp; Revenue Growth</h3>
@@ -1033,9 +1050,12 @@
         <!-- 3. Red Bull -->
         <div class="work-card fade-in">
           <div class="work-card-top">
-            <div>
-              <img src="images/logos/red-bull.png" alt="Red Bull" class="work-logo" width="200" height="200" />
-              <p class="work-role">LATAM Head of Trade Marketing</p>
+            <div class="work-brand">
+              <img src="images/logos/red-bull.png" alt="Red Bull" class="work-logo" width="36" height="36" />
+              <div class="work-brand-text">
+                <p class="work-company">Red Bull</p>
+                <p class="work-role">LATAM Head of Trade Marketing</p>
+              </div>
             </div>
           </div>
           <h3 class="work-title">$10M+ Marketing Across 20+ Global Markets</h3>
@@ -1050,9 +1070,12 @@
         <!-- 4. HyperionDev -->
         <div class="work-card fade-in">
           <div class="work-card-top">
-            <div>
-              <img src="images/logos/hyperiondev.png" alt="HyperionDev" class="work-logo" width="200" height="200" />
-              <p class="work-role">Global Head of Marketing</p>
+            <div class="work-brand">
+              <img src="images/logos/hyperiondev.png" alt="HyperionDev" class="work-logo" width="36" height="36" />
+              <div class="work-brand-text">
+                <p class="work-company">HyperionDev</p>
+                <p class="work-role">Global Head of Marketing</p>
+              </div>
             </div>
           </div>
           <h3 class="work-title">3x Revenue Growth in 12 Months</h3>
@@ -1072,12 +1095,15 @@
           </a>
         </div>
 
-        <!-- 5. Timewarp -->
+        <!-- 5. Timewarp Delivery -->
         <div class="work-card fade-in">
           <div class="work-card-top">
-            <div>
-              <img src="images/logos/timewarp.png" alt="Timewarp Delivery" class="work-logo" width="200" height="200" />
-              <p class="work-role">Founder</p>
+            <div class="work-brand">
+              <img src="images/logos/timewarp.png" alt="Timewarp Delivery" class="work-logo" width="36" height="36" />
+              <div class="work-brand-text">
+                <p class="work-company">Timewarp Delivery</p>
+                <p class="work-role">Founder</p>
+              </div>
             </div>
           </div>
           <h3 class="work-title">First to Market: Sub 1-Hour Delivery in South Africa</h3>
@@ -1099,9 +1125,12 @@
         <!-- 6. Moms Who Trade -->
         <div class="work-card fade-in">
           <div class="work-card-top">
-            <div>
-              <img src="images/logos/moms-who-trade.png" alt="Moms Who Trade" class="work-logo" width="200" height="200" />
-              <p class="work-role">Founder &amp; Brand Creator</p>
+            <div class="work-brand">
+              <img src="images/logos/moms-who-trade.png" alt="Moms Who Trade" class="work-logo" width="36" height="36" />
+              <div class="work-brand-text">
+                <p class="work-company">Moms Who Trade</p>
+                <p class="work-role">Co-Founder</p>
+              </div>
             </div>
             <span class="badge-new">New</span>
           </div>
