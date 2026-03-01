@@ -311,6 +311,34 @@
       margin-bottom: 22px;
     }
 
+    .hero-location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      margin-top: -10px;
+    }
+
+    .hero-location-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+      animation: pulse-dot 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.75); }
+    }
+
+    .hero-location-base {
+      opacity: 0.5;
+    }
+
     .hero-sub {
       font-size: clamp(14px, 2vw, 17px);
       font-weight: 300;
@@ -876,6 +904,11 @@
         <div class="hero-content">
           <p class="hero-eyebrow">janlo.xyz</p>
           <h1 class="hero-name">Janlo van den Heever</h1>
+          <p class="hero-location">
+            <span class="hero-location-dot"></span>
+            Currently in Bali, Indonesia &middot; GMT+8
+            <span class="hero-location-base">&nbsp;&middot;&nbsp;Base: Cape Town, SA</span>
+          </p>
           <p class="hero-sub">I build growth systems that scale &mdash; not campaigns. Bitcoin, fintech and digital assets, from zero to millions, across 15+ markets.<br>Strategy and execution: automation, code, data storytelling and deal-closing. 18 years &middot; $10M+ budgets &middot; 2M+ users grown.</p>
           <div class="hero-ctas">
             <a href="files/janlo-vdh-cv.pdf" class="btn btn-primary" target="_blank" rel="noopener">
