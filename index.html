@@ -719,13 +719,19 @@
     }
 
     .rev-card {
-      background: #0d1117;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       padding: 28px;
       display: flex;
       flex-direction: column;
       gap: 16px;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .rev-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 40px var(--accent-glow), inset 0 0 28px rgba(37,99,235,0.03);
+      transform: translateY(-5px);
     }
 
     /* Centre the lone third card */
@@ -755,7 +761,7 @@
       align-items: center;
       gap: 12px;
       padding-top: 4px;
-      border-top: 1px solid #1e293b;
+      border-top: 1px solid var(--border);
     }
 
     .rev-avatar {
