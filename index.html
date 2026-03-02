@@ -169,16 +169,25 @@
         align-items: flex-start;
         gap: 0;
         background: rgba(9, 13, 24, 0.98);
-        padding: 12px 0;
+        padding: 8px 0 20px;
         border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
       }
       .nav-links.open { display: flex; }
       .nav-links a {
         width: 100%;
-        padding: 13px 28px;
+        padding: 16px 28px;
         font-size: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
       }
-      .nav-cta { margin: 12px 28px; width: calc(100% - 56px); text-align: center; }
+      .nav-links a:last-of-type { border-bottom: none; }
+      .nav-cta {
+        margin: 16px 28px 0;
+        width: calc(100% - 56px);
+        text-align: center;
+        border-bottom: none !important;
+        padding: 12px 28px !important;
+      }
     }
 
     /* ============================================================
@@ -291,15 +300,6 @@
       box-shadow:
         0 0 0 8px rgba(37, 99, 235, 0.07),
         0 0 48px rgba(37, 99, 235, 0.28);
-    }
-
-    .hero-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 22px;
     }
 
     .hero-name {
@@ -929,8 +929,7 @@
 
       /* Reorder hero content: move location below CTAs */
       .hero-content { display: flex; flex-direction: column; }
-      .hero-eyebrow  { order: 1; }
-      .hero-name     { order: 2; }
+      .hero-name     { order: 1; }
       .hero-sub      { order: 3; color: #b2bfcf; }
       .hero-ctas     { order: 4; }
       .hero-location { order: 5; margin-top: 20px; margin-bottom: 0; }
@@ -1014,7 +1013,6 @@
       <div class="hero-inner">
 
         <div class="hero-content">
-          <p class="hero-eyebrow">janlo.xyz</p>
           <h1 class="hero-name">Janlo van den Heever</h1>
           <p class="hero-location">
             <span class="hero-location-dot"></span>
