@@ -111,12 +111,44 @@
     }
 
     .nav-logo {
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: -0.5px;
       color: var(--text);
+      display: flex;
+      align-items: center;
     }
     .nav-logo em { color: var(--accent); font-style: normal; }
+
+    .nav-tagline-sep {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,0.15);
+      margin: 0 11px;
+      flex-shrink: 0;
+    }
+
+    .nav-tagline {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+      min-width: 0;
+      white-space: nowrap;
+    }
+
+    .nav-tagline::after {
+      content: '|';
+      margin-left: 1px;
+      animation: cursor-blink 0.65s step-end infinite;
+    }
+
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    .nav-close-row { display: none; }
 
     .nav-links {
       display: flex;
@@ -163,6 +195,7 @@
 
     @media (max-width: 860px) {
       .nav-toggle { display: block; }
+      .nav-tagline-sep, .nav-tagline { display: none; }
       .nav-links {
         display: none;
         position: fixed;
@@ -1048,7 +1081,7 @@
   ================================================================ -->
   <nav id="main-nav">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">Janlo <em>VDH</em></a>
+      <a href="#hero" class="nav-logo">Janlo <em>VDH</em><span class="nav-tagline-sep"></span><span id="nav-tagline" class="nav-tagline"></span></a>
 
       <ul class="nav-links" id="nav-links">
         <li><a href="#services">What I Do</a></li>
@@ -1743,6 +1776,41 @@
       }, { threshold: 0.4 });
 
       if (statsSection) observer.observe(statsSection);
+    })();
+
+    /* ---- NAV TAGLINE TYPEWRITER ---- */
+    (function () {
+      const el = document.getElementById('nav-tagline');
+      if (!el) return;
+
+      const phrases = ['Grow Anything', 'Scale Markets', 'Build Brands', 'Move Capital'];
+      let pi = 0, ci = 0, deleting = false;
+
+      function tick() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          ci++;
+          el.textContent = phrase.slice(0, ci);
+          if (ci === phrase.length) {
+            deleting = true;
+            setTimeout(tick, 2000);
+          } else {
+            setTimeout(tick, 70);
+          }
+        } else {
+          ci--;
+          el.textContent = phrase.slice(0, ci);
+          if (ci === 0) {
+            deleting = false;
+            pi = (pi + 1) % phrases.length;
+            setTimeout(tick, 450);
+          } else {
+            setTimeout(tick, 38);
+          }
+        }
+      }
+
+      setTimeout(tick, 1400);
     })();
 
     /* ---- MARQUEE SCROLL SPEED-UP ---- */
