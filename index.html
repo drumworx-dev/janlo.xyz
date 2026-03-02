@@ -761,7 +761,7 @@
       display: flex;
       gap: 16px;
       width: max-content;
-      animation: marquee-scroll 40s linear infinite;
+      animation: marquee-scroll 32s linear infinite;
     }
 
     #work-marquee:hover .marquee-track {
@@ -1233,7 +1233,9 @@
   ================================================================ -->
   <section id="work-marquee" aria-hidden="true">
     <div class="marquee-track">
-      <!-- Original set -->
+      <!-- Original set — starts at w8 -->
+      <img src="images/work/w8.png" alt="" class="marquee-img" />
+      <img src="images/work/w9.png" alt="" class="marquee-img" />
       <img src="images/work/w1.png" alt="" class="marquee-img" />
       <img src="images/work/w2.png" alt="" class="marquee-img" />
       <img src="images/work/w3.png" alt="" class="marquee-img" />
@@ -1241,9 +1243,9 @@
       <img src="images/work/w5.png" alt="" class="marquee-img" />
       <img src="images/work/w6.png" alt="" class="marquee-img" />
       <img src="images/work/w7.png" alt="" class="marquee-img" />
-      <img src="images/work/w8.png" alt="" class="marquee-img" />
-      <img src="images/work/w9.png" alt="" class="marquee-img" />
       <!-- Duplicate set for seamless loop -->
+      <img src="images/work/w8.png" alt="" class="marquee-img" />
+      <img src="images/work/w9.png" alt="" class="marquee-img" />
       <img src="images/work/w1.png" alt="" class="marquee-img" />
       <img src="images/work/w2.png" alt="" class="marquee-img" />
       <img src="images/work/w3.png" alt="" class="marquee-img" />
@@ -1251,8 +1253,6 @@
       <img src="images/work/w5.png" alt="" class="marquee-img" />
       <img src="images/work/w6.png" alt="" class="marquee-img" />
       <img src="images/work/w7.png" alt="" class="marquee-img" />
-      <img src="images/work/w8.png" alt="" class="marquee-img" />
-      <img src="images/work/w9.png" alt="" class="marquee-img" />
     </div>
   </section>
 
@@ -1721,6 +1721,25 @@
       }, { threshold: 0.4 });
 
       if (statsSection) observer.observe(statsSection);
+    })();
+
+    /* ---- MARQUEE SCROLL SPEED-UP ---- */
+    (function () {
+      const track   = document.querySelector('.marquee-track');
+      const section = document.getElementById('work-marquee');
+      if (!track || !section) return;
+
+      const BASE = 32;   // seconds — normal speed
+      const FAST = 7;    // seconds — while scrolling over section
+      let resetTimer;
+
+      section.addEventListener('wheel', () => {
+        track.style.animationDuration = FAST + 's';
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+          track.style.animationDuration = BASE + 's';
+        }, 600);
+      }, { passive: true });
     })();
 
     /* ---- SMOOTH SCROLL FOR ANCHOR LINKS ---- */
