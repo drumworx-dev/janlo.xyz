@@ -14,6 +14,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://janlo.xyz" />
   <meta property="og:image" content="https://janlo.xyz/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
 
   <!-- Favicon: headshot -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -929,6 +932,29 @@
     }
 
     /* ============================================================
+       LINKEDIN POSTS
+    ============================================================ */
+    .li-posts-label {
+      margin-top: 52px;
+      margin-bottom: 18px;
+    }
+
+    .li-posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .li-post-frame iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    /* ============================================================
        FOOTER
     ============================================================ */
     footer {
@@ -1050,6 +1076,18 @@
         padding-bottom: 16px;
       }
       .rec-card {
+        min-width: 288px;
+        scroll-snap-align: start;
+      }
+      .li-posts-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px;
+      }
+      .li-post-frame {
         min-width: 288px;
         scroll-snap-align: start;
       }
@@ -1570,6 +1608,23 @@
 
 
       </div>
+
+      <div class="li-posts-label fade-in">
+        <span class="section-label">From LinkedIn</span>
+      </div>
+
+      <div class="li-posts-grid">
+        <div class="li-post-frame fade-in">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7367347449016868864?collapsed=1" height="500" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        </div>
+        <div class="li-post-frame fade-in">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7346400701096300545?collapsed=1" height="500" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        </div>
+        <div class="li-post-frame fade-in">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333467842371018752?collapsed=1" height="500" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        </div>
+      </div>
+
     </div>
   </section>
 
