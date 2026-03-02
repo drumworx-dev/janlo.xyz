@@ -172,9 +172,8 @@
         align-items: stretch;
         gap: 0;
         background: rgba(9, 13, 24, 0.98);
-        padding: 4px 24px 16px;
+        padding: 4px 24px 0;
         border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(12px);
         list-style: none;
       }
       .nav-links.open { display: flex; }
@@ -182,7 +181,6 @@
         width: 100%;
         border-bottom: 1px solid rgba(255,255,255,0.06);
       }
-      .nav-links li:last-child { border-bottom: none; }
       .nav-links a {
         display: block;
         width: 100%;
@@ -190,15 +188,29 @@
         font-size: 15px;
         color: var(--text-dim);
       }
-      .nav-links li:last-child a { padding: 0; }
+      .nav-cta-li { border-bottom: none; }
       .nav-cta {
         display: block;
         margin-top: 12px;
         width: 100%;
         text-align: center;
         padding: 11px 0 !important;
-        border-bottom: none !important;
       }
+      .nav-close-row {
+        border-bottom: none;
+        display: flex;
+        justify-content: center;
+        padding: 16px 0 20px;
+      }
+      .nav-close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-dim);
+        opacity: 0.5;
+        padding: 6px 20px;
+      }
+      .nav-close-btn:hover { opacity: 1; }
     }
 
     /* ============================================================
@@ -1001,7 +1013,15 @@
         <li><a href="#work">Work</a></li>
         <li><a href="#stats">Numbers</a></li>
         <li><a href="#recommendations">Recommendations</a></li>
-        <li><a href="mailto:janlovdh.cx@gmail.com" class="nav-cta">Contact</a></li>
+        <li class="nav-cta-li"><a href="mailto:janlovdh.cx@gmail.com" class="nav-cta">Contact</a></li>
+        <li class="nav-close-row">
+          <button class="nav-close-btn" id="nav-close" aria-label="Close menu">
+            <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="2,15 12,7 22,15"/>
+              <polyline points="2,8 12,0 22,8"/>
+            </svg>
+          </button>
+        </li>
       </ul>
 
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -1520,6 +1540,11 @@
     navToggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', open);
+    });
+
+    document.getElementById('nav-close').addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
 
     // Close mobile nav when a link is clicked
