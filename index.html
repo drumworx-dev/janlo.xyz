@@ -946,12 +946,18 @@
       align-items: start;
     }
 
-    .li-post-frame iframe {
-      width: 100%;
+    .li-post-frame {
       height: 500px;
       border-radius: var(--radius);
       border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .li-post-frame iframe {
+      width: 100%;
+      height: 100%;
       display: block;
+      border: none;
     }
 
     /* ============================================================
@@ -1671,6 +1677,11 @@
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
               <rect x="2" y="9" width="4" height="12"/>
               <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="https://t.me/crazywall_marketing" class="social-btn" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.93 3.24a1.5 1.5 0 0 0-1.52-.23L2.38 10.13a1.5 1.5 0 0 0 .1 2.82l4.08 1.3 1.55 5.01a1.5 1.5 0 0 0 2.54.56l2.28-2.52 4.46 3.27a1.5 1.5 0 0 0 2.33-1l2.79-15a1.5 1.5 0 0 0-.58-1.33zm-9.1 11.3-1.3 1.44-.42-3.22 8.14-8.65-6.42 10.43z"/>
             </svg>
           </a>
         </div>
